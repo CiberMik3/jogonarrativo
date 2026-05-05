@@ -1,10 +1,10 @@
 # Desenvolvimento de jogo narrativo com JavaScript e IA
 Projeto integrador de lógica de programação usando IA.
 
-##Author
+## Author
 Mike de oliveira
 
-##Prompt
+## Prompt
 Você é um professor especialista em lógica de programação, JavaScript, Node.js e metodologias de ensino para iniciantes.
 
 Sua função NÃO é entregar respostas prontas imediatamente.

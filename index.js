@@ -93,6 +93,7 @@ function roteiroescolha2() {
 //- - - A CAVERNA SOMBRIA - - - 
 
 function roteiroEscolha3() {
+    console.clear()
     console.log(`Depois de atravessar a Floresta da Névoa, ${jogador} finalmente encontra uma abertura entre as rochas. A entrada da caverna é enorme, escura e fria, como se estivesse “respirando” lentamente.`)
     console.log()
     console.log("O vento que sai de dentro dela traz um cheiro de queimado e algo antigo, como cinzas e metal. O silêncio ao redor fica pesado demais, como se a própria ilha estivesse prendendo a respiração.")
@@ -108,19 +109,35 @@ function roteiroescolha4() {
 }
 //- - - BATALHA - - - 
 function roteiroescolha5() {
-
+    console.log(`Ao atravessar a CAVERNA SOMBRIA, ${jogador} sente o ar ficar mais quente e pesado. As paredes começam a brilhar com veias de luz dourada, como se a própria montanha estivesse viva. Cada passo ecoa por um salão gigantesco escondido no coração da ilha.`)
+    console.log("No centro desse enorme salão subterrâneo, existe um lago de lava cristalina e ruínas antigas cobertas por símbolos desconhecidos. O silêncio é absoluto… até que ele é quebrado por um som que parece rasgar o próprio ar.")
+    console.log("Um rugido triplo ecoa pela caverna.")
+    console.log("Das sombras, surge um dragão celestial de três cabeças, com escamas brilhando como estrelas e olhos que parecem conter tempestades inteiras. O chão treme enquanto suas asas se abrem, bloqueando toda a saída.")
+    console.log(`${jogador} agora tem três escolhas:`)
+    prompt(`Precione [ENTER] para continuar`.bgWhite)
 }
 //- - - FINALBOM - - -
 function roteiroFinalBom() {
-
+    prompt(`Precione [ENTER] para continuar`.bgWhite)
 }
 //- - - FINALRUIM - - -
 function roteiroFinalRuim() {
-
+    prompt(`Precione [ENTER] para continuar`.bgWhite)
 }
 
+function parabens() {
+    console.log(`${jogador} apos matar o dragão o jogador foge da caberna e entra em sua jangada`)
+    console.log("ele pega a sua jangada e tenta seguir em frente")
+    console.log("ao navegar ele percebe que as barreiras nao exitem mais e fica super animado")
+    console.log("ele segue em frente... pronto para a proxima aventira")
+    prompt(`Precione [ENTER] para continuar`.bgWhite)
+}
 
-
+function agradecimento() {
+    console.log("OBRIGADO POR JOGAR")
+    console.log()
+    console.log("~Mike de oliveira")
+}
 //====================================================================================================
 // FUNÇÕES
 
@@ -159,7 +176,8 @@ function iniciarJogo() {
 
             case 2:
                 console.clear()
-                console.log("Este é um jogo narrativo com o tema de aventura........")
+                console.log("Este é um jogo narrativo com o tema de aventura, onde o jogo lhe dara opções e você tera que escolher uma ate chegar ao final")
+                console.log("boa sorte hehe")
                 prompt("Pressione [ENTER] para voltar.".bgWhite)
                 // volta pro menu (loop continua)
                 break
@@ -184,8 +202,9 @@ function primeiraEscolha() {
     let executando1 = true
 
     while (executando1) {
-        roteitoEscolha1
+
         console.clear()
+        roteitoEscolha1()
         console.log(`O que ${jogador} deveria fazer agora?`)
         console.log()
         console.log("1. Usar alguns dos recursos para construir uma jangada e tentar sair da ilha")
@@ -252,116 +271,116 @@ function primeiraEscolha() {
 }
 
 // ESCOLHAS =FLORESTA NEVOADA=
-function segundaEscolha(){
+function segundaEscolha() {
     let desafioCompleto = false
-let tentativas = 0
+    let tentativas = 0
 
-console.clear()
+    console.clear()
 
-console.log("=== FLORESTA DA NÉVOA ===")
-console.log("Uma névoa densa cobre toda a floresta.")
-console.log("Você quase não consegue enxergar alguns metros à frente.")
-console.log("Enquanto anda, sons estranhos ecoam entre as árvores...\n")
+    console.log("=== FLORESTA DA NÉVOA ===")
+    console.log("Uma névoa densa cobre toda a floresta.")
+    console.log("Você quase não consegue enxergar alguns metros à frente.")
+    console.log("Enquanto anda, sons estranhos ecoam entre as árvores...\n")
 
-while (!desafioCompleto) {
+    while (!desafioCompleto) {
 
-    console.log("\nEscolha um caminho:")
-    console.log("[1] Ir pela esquerda")
-    console.log("[2] Ir pela direita")
-    console.log("[3] Seguir o rio")
+        console.log("\nEscolha um caminho:")
+        console.log("[1] Ir pela esquerda")
+        console.log("[2] Ir pela direita")
+        console.log("[3] Seguir o rio")
 
-    let escolha = prompt(">> ")
+        let escolha = prompt(">> ")
 
-    switch (escolha) {
+        switch (escolha) {
 
-        case "1":
+            case "1":
 
-            console.clear()
+                console.clear()
 
-            console.log("Você segue pela esquerda.")
-            console.log("Os sons ficam mais altos...")
-            console.log("Depois de alguns minutos, percebe que voltou ao mesmo lugar.")
+                console.log("Você segue pela esquerda.")
+                console.log("Os sons ficam mais altos...")
+                console.log("Depois de alguns minutos, percebe que voltou ao mesmo lugar.")
 
-            tentativas++
+                tentativas++
 
-            console.log(`\nTentativas erradas: ${tentativas}/3`)
+                console.log(`\nTentativas erradas: ${tentativas}/3`)
 
-            if (tentativas >= 3) {
+                if (tentativas >= 3) {
 
-                console.log("\nA névoa consome completamente sua visão.")
-                console.log("Você se perde na floresta para sempre...")
-                console.log("\n=== GAME OVER ===")
+                    console.log("\nA névoa consome completamente sua visão.")
+                    console.log("Você se perde na floresta para sempre...")
+                    console.log("\n=== GAME OVER ===")
 
-                process.exit()
-            }
+                    process.exit()
+                }
 
-            prompt("\nPressione ENTER para continuar...")
-            console.clear()
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
 
-            break
-
-
-        case "2":
-
-            console.clear()
-
-            console.log("Você segue pela direita.")
-            console.log("A névoa fica ainda mais densa.")
-            console.log("Algo se move entre as árvores.")
-            console.log("Você corre assustado e tropeça em raízes.")
-
-            tentativas++
-
-            console.log(`\nTentativas erradas: ${tentativas}/3`)
-
-            if (tentativas >= 3) {
-
-                console.log("\nA névoa consome completamente sua visão.")
-                console.log("Você se perde na floresta para sempre...")
-                console.log("\n=== GAME OVER ===")
-
-                process.exit()
-            }
-
-            prompt("\nPressione ENTER para continuar...")
-            console.clear()
-
-            break
+                break
 
 
-        case "3":
+            case "2":
 
-            console.clear()
+                console.clear()
 
-            console.log("Você decide seguir o som da água.")
-            console.log("O rio guia você para fora da parte mais densa da floresta.")
-            console.log("Após alguns minutos de caminhada...")
-            console.log("Você encontra uma tocha antiga e um mapa incompleto da ilha.")
+                console.log("Você segue pela direita.")
+                console.log("A névoa fica ainda mais densa.")
+                console.log("Algo se move entre as árvores.")
+                console.log("Você corre assustado e tropeça em raízes.")
 
-            console.log("\nVocê conseguiu atravessar a Floresta da Névoa!")
+                tentativas++
 
-            desafioCompleto = true
+                console.log(`\nTentativas erradas: ${tentativas}/3`)
 
-            prompt("\nPressione ENTER para continuar...")
-            console.clear()
+                if (tentativas >= 3) {
 
-            break
+                    console.log("\nA névoa consome completamente sua visão.")
+                    console.log("Você se perde na floresta para sempre...")
+                    console.log("\n=== GAME OVER ===")
+
+                    process.exit()
+                }
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
+                break
 
 
-        default:
+            case "3":
 
-            console.clear()
+                console.clear()
 
-            console.log("Escolha inválida.")
+                console.log("Você decide seguir o som da água.")
+                console.log("O rio guia você para fora da parte mais densa da floresta.")
+                console.log("Após alguns minutos de caminhada...")
+                console.log("Você encontra uma tocha antiga e um mapa incompleto da ilha.")
 
-            prompt("\nPressione ENTER para continuar...")
-            console.clear()
+                console.log("\nVocê conseguiu atravessar a Floresta da Névoa!")
 
-            break
+                desafioCompleto = true
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
+                break
+
+
+            default:
+
+                console.clear()
+
+                console.log("Escolha inválida.")
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
+                break
+        }
     }
-}
 
-console.log("Você segue em direção às ruínas antigas da ilha...")
+    console.log("Você segue em direção às ruínas antigas da ilha...")
 
 }
 
@@ -474,7 +493,7 @@ function terceiraEscolha() {
 }
 
 // ESCOLHAS =LAR DO DRAGÃO=
-function quartaEscolha(){
+function quartaEscolha() {
 
     let desafioCompleto = false
     let tentativas = 0
@@ -599,6 +618,178 @@ function quartaEscolha(){
     console.log("A batalha ainda não terminou...")
 }
 
+//derrotar o dragao
+function quintaescolha() {
+
+    let desafioCompleto = false
+    let tentativas = 0
+
+    console.clear()
+
+    console.log("=== O DRAGÃO CELESTIAL DE 3 CABEÇAS ===")
+    console.log("A criatura desperta completamente.")
+    console.log("O chão treme. O ar queima. Não há saída fácil...\n")
+
+    while (!desafioCompleto) {
+
+        console.log("\nO dragão te encara com fúria absoluta.")
+        console.log("O que você faz?")
+        console.log("[1] Fugir")
+        console.log("[2] Atacar")
+
+        let escolha = prompt(">> ")
+
+        switch (escolha) {
+
+            case "1":
+
+                console.clear()
+
+                console.log("Você tenta fugir desesperadamente...")
+                console.log("Mas escorrega no chão da caverna.")
+                console.log("O som alerta o dragão imediatamente.")
+
+                console.log("\nEm um único rugido, tudo acaba.")
+                console.log("\n=== GAME OVER ===")
+
+                process.exit()
+
+
+            case "2":
+
+                console.clear()
+
+                console.log("Você decide encarar o dragão!")
+                console.log("As três cabeças atacam ao mesmo tempo...")
+                console.log("Você desvia no último instante e encontra uma abertura.")
+
+                console.log("\nVocê acerta um ponto vital entre as escamas!")
+
+                console.log("O dragão grita e começa a cair...")
+                console.log("A ilha inteira treme enquanto ele desaba.")
+
+                console.log("\nVocê derrotou o Dragão Celestial!")
+
+                console.log("Uma passagem se abre no céu da caverna...")
+                console.log("Você e Jan conseguem escapar da ilha.")
+
+                console.log("\n=== FINAL: ESCAPE DA ILHA ===")
+
+                desafioCompleto = true
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
+                break
+
+
+            default:
+
+                console.clear()
+
+                console.log("Escolha inválida.")
+
+                tentativas++
+
+                if (tentativas >= 3) {
+                    console.log("\nO dragão perde a paciência...")
+                    console.log("Você é destruído sem piedade.")
+                    console.log("\n=== GAME OVER ===")
+                    process.exit()
+                }
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
+                break
+        }
+    }
+
+}
+
+//batalha
+function batalhaDragao() {
+
+    console.clear()
+
+    console.log("=== O DRAGÃO CELESTIAL DE 3 CABEÇAS ===")
+    console.log("O monstro te encara com olhos cósmicos.")
+    console.log("O chão treme a cada movimento.\n")
+
+    console.log("O que você faz?")
+    console.log("[1] Fugir")
+    console.log("[2] Atacar")
+
+    let escolha = prompt(">> ")
+
+    switch (escolha) {
+
+        case "1":
+
+            console.clear()
+
+            console.log("Você tenta fugir desesperadamente...")
+            console.log("Mas escorrega no chão irregular da caverna.")
+            console.log("O barulho chama a atenção do dragão...")
+
+            console.log("\nEle te percebe imediatamente.")
+
+            fimDeJogo(false)
+
+            break
+
+
+        case "2":
+
+            console.clear()
+
+            console.log("Você avança contra o dragão!")
+            console.log("O rugido dele ecoa pela caverna inteira.")
+            console.log("Você desvia de um ataque e encontra uma abertura...")
+
+            console.log("\nVocê acerta um ponto vital entre as escamas!")
+
+            fimDeJogo(true)
+
+            break
+
+
+        default:
+
+            console.clear()
+
+            console.log("Escolha inválida.")
+
+            prompt("\nPressione ENTER para tentar novamente...")
+            batalhaDragao()
+    }
+}
+
+//ganhar ou perder
+function fimDeJogo(vitoria) {
+
+    console.clear()
+
+    if (vitoria) {
+
+        console.log("🏆 VOCÊ VENCEU!")
+        console.log("O dragão cai derrotado diante de você.")
+        console.log("A ilha começa a ruir, e uma saída se abre no céu.")
+        console.log("Você consegue fugir da ilha com a sua jangada.")
+
+        console.log("\n=== FINAL: A ESCAPE ===")
+    } else {
+
+        console.log("💀 VOCÊ FALHOU COMO AVENTUREIRO")
+        console.log("O dragão consome sua última esperança.")
+        console.log("A ilha engole sua história para sempre.")
+
+        console.log("\n=== GAME OVER ===")
+    }
+
+    process.exit()
+}
+
 //====================================================================================================
 //Executar funções
 comprimentacao()
@@ -611,10 +802,13 @@ primeiraEscolha()
 roteiroescolha2()
 segundaEscolha()
 
-roteitoEscolha3()
+roteiroEscolha3()
 terceiraEscolha()
 
 roteiroescolha4()
 quartaEscolha()
 
-
+quintaescolha()
+batalhaDragao()
+fimDeJogo()
+parabens()

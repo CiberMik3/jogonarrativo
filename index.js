@@ -300,7 +300,7 @@ function segundaEscolha() {
 
     console.clear()
 
-    console.log("=== FLORESTA DA NÉVOA ===")
+    console.log("=== FLORESTA DA NÉVOA ===".bgGreen)
     console.log("Uma névoa densa cobre toda a floresta.")
     console.log("Você quase não consegue enxergar alguns metros à frente.")
     console.log("Enquanto anda, sons estranhos ecoam entre as árvores...\n")

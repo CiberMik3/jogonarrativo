@@ -257,15 +257,16 @@ function primeiraEscolha() {
                 executando1 = false
                 break
             case 3:
+        }
+
+  if (tentativas >= 1) {
+
+                    console.log("\nVocê tenta preocura mais uma vez.")
+                    console.log("Você preocurou por mais um item ou recurso mais nao conseguiu achar nada que o-ajudaria")
+                    console.log("\nNão tente preocura novamente....")
+                
+        } else {
                 tentativas++
-                if (tentativas >= 2) {
-
-                    console.log("\nVocê tentou explora novamente mas caiu em uma armadilha.")
-                    console.log("Você tenta se soltar mas falha e fica preso pra sempre..")
-                    console.log("\n=== GAME OVER ===")
-                    process.exit()
-                }
-
                 console.clear()
                 console.log(`Decidido a entender melhor a ilha, ${jogador} começa a explorar a enorme floresta diante da praia.`)
                 console.log()
@@ -277,10 +278,9 @@ function primeiraEscolha() {
                 console.log("mas também importante.")
                 console.log("E então voce abre esse bau e encontra A ESPADA DE OURO SAGRADA".bgYellow)
                 espada = 1
-
+                
                 console.log("")
                 prompt("Pressione [ENTER] para continuar.".bgWhite)
-
 
         }
     }

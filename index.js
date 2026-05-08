@@ -17,9 +17,9 @@ function mostrarMenu() {
     console.log("─║╔╗║────║║─║║──║╔╗║║╔╗║───║║─║║║║║║───║║─║║║╔╗╔╝║╔╗║║║╚╗║║╔╗║║║║║─")
     console.log("─║║║║───╔╝╚╗║╚═╗║║║║║║║║───║╚═╝║║╚╝║───║╚═╝║║║║║─║║║║║╚═╝║║║║║║╚╝║─")
     console.log("─╚╝╚╝───╚══╝╚══╝╚╝╚╝╚╝╚╝───╚═══╝╚══╝───╚═══╝╚╝╚╝─╚╝╚╝╚═══╝╚╝╚╝╚══╝─")
-    console.log("1. Começar o jogo")
-    console.log("2. Manual")
-    console.log("3. Sair")
+    console.log("                     1. Começar o jogo")
+    console.log("                        2. Manual")
+    console.log("                         3. Sair")
 }
 
 function comprimentacao() {
@@ -50,7 +50,6 @@ function historiaInicial() {
     console.log("O som das ondas agora era distante.")
     console.log("Quando abriu os olhos, o aventureiro estava deitado na areia. Seu corpo doía, sua cabeça girava… e seu navio havia desaparecido.")
     console.log("")
-    console.log("Ao se levantar, percebeu algo estranho.")
     console.log("Ao se levantar, percebeu algo estranho.")
     console.log("E, no fundo de sua mente, uma sensação inquietante surgia:")
     console.log("Ele não estava ali por acaso.")
@@ -176,8 +175,15 @@ function iniciarJogo() {
 
             case 2:
                 console.clear()
-                console.log("Este é um jogo narrativo com o tema de aventura, onde o jogo lhe dara opções e você tera que escolher uma ate chegar ao final")
+                //console.log("Este é um jogo narrativo com tema de aventura, onde o jogador acompanha uma história interativa repleta de desafios, acontecimentos e momentos de exploração. Durante a jornada, diferentes opções serão apresentadas na tela, e o jogador deverá escolher uma delas para continuar avançando na aventura.")
+                //console.log("Ao longo do jogo, será possível conhecer novos cenários, encontrar personagens, enfrentar situações inesperadas e descobrir diferentes partes da narrativa até chegar ao final da história. O objetivo é proporcionar uma experiência divertida e envolvente, incentivando o jogador a acompanhar cada etapa da aventura e tomar decisões para prosseguir no jogo.")
+                //console.log("Prepare-se para explorar esse universo narrativo e seguir por diversos caminhos até concluir sua jornada.")
+                console.log("Este é um jogo narrativo de aventura onde o jogador acompanha uma história interativa cheia de desafios e exploração.")
+                console.log("Durante a jornada, diferentes opções serão apresentadas para que o jogador escolha como continuar avançando.")
+                console.log("Ao longo da aventura, será possível conhecer novos cenários, enfrentar situações inesperadas e descobrir diferentes acontecimentos até chegar ao final da história.")
+                console.log()
                 console.log("boa sorte hehe")
+                console.log("")
                 prompt("Pressione [ENTER] para voltar.".bgWhite)
                 // volta pro menu (loop continua)
                 break
@@ -185,8 +191,7 @@ function iniciarJogo() {
             case 3:
                 console.clear()
                 console.log("OK! Até a próxima")
-                prompt("Precione qualquer tecla para continuar. . .")
-                break // return acaba com o jogo
+                process.exit()
 
             default:
                 console.clear()
@@ -202,14 +207,14 @@ function primeiraEscolha() {
     let executando1 = true
 
     while (executando1) {
-
-        console.clear()
         roteitoEscolha1()
+        console.clear()
+        let tentativas = 0
         console.log(`O que ${jogador} deveria fazer agora?`)
         console.log()
-        console.log("1. Usar alguns dos recursos para construir uma jangada e tentar sair da ilha")
-        console.log("2. Usar os recursos para construir uma cabana para passar a noite")
-        console.log("3. Explorar mais")
+        console.log("[1] Usar alguns dos recursos para construir uma jangada e tentar sair da ilha")
+        console.log("[2] Usar os recursos para construir uma cabana para passar a noite")
+        console.log("[3] Explorar mais")
         let opcao1 = Number(prompt("Escolha uma opção: "))
 
 
@@ -252,19 +257,30 @@ function primeiraEscolha() {
                 executando1 = false
                 break
             case 3:
+                tentativas++
+                if (tentativas >= 2) {
+
+                    console.log("\nVocê tentou explora novamente mas caiu em uma armadilha.")
+                    console.log("Você tenta se soltar mas falha e fica preso pra sempre..")
+                    console.log("\n=== GAME OVER ===")
+                    process.exit()
+                }
+
                 console.clear()
                 console.log(`Decidido a entender melhor a ilha, ${jogador} começa a explorar a enorme floresta diante da praia.`)
-                console.log("À medida que avança entre as árvores, o som das ondas vai desaparecendo lentamente, substituído apenas pelo vento e pelo barulho das folhas sob seus pés.")
+                console.log()
                 console.log("Depois de caminhar por algum tempo, algo chama sua atenção no meio da mata.")
                 console.log("Entre raízes e pedras cobertas de musgo, havia um baú de prata parcialmente enterrado no chão.")
-                console.log("Mesmo coberto pela sujeira e pelo tempo, o objeto ainda brilhava intensamente sempre que a luz do sol atravessava as árvores.")
+                console.log("O baú ainda brilhava intensamente sempre que a luz do sol atravessava as árvores.")
                 console.log(`${jogador} se aproxima devagar, observando os detalhes gravados na superfície metálica do baú.`)
                 console.log("Ele parecia antigo...")
                 console.log("mas também importante.")
-                console.log("E então voce abre esse bau e encontra uma espada de ouro")
+                console.log("E então voce abre esse bau e encontra A ESPADA DE OURO SAGRADA".bgYellow)
                 espada = 1
+
                 console.log("")
                 prompt("Pressione [ENTER] para continuar.".bgWhite)
+
 
         }
     }
@@ -277,7 +293,7 @@ function segundaEscolha() {
 
     console.clear()
 
-    console.log("=== FLORESTA DA NÉVOA ===")
+    console.log("=== FLORESTA DA NÉVOA ===".bgGreen)
     console.log("Uma névoa densa cobre toda a floresta.")
     console.log("Você quase não consegue enxergar alguns metros à frente.")
     console.log("Enquanto anda, sons estranhos ecoam entre as árvores...\n")
@@ -305,7 +321,7 @@ function segundaEscolha() {
 
                 console.log(`\nTentativas erradas: ${tentativas}/3`)
 
-                if (tentativas >= 3) {
+                if (tentativas >= 1) {
 
                     console.log("\nA névoa consome completamente sua visão.")
                     console.log("Você se perde na floresta para sempre...")
@@ -787,7 +803,6 @@ function fimDeJogo(vitoria) {
         console.log("\n=== GAME OVER ===")
     }
 
-    process.exit()
 }
 
 //====================================================================================================

@@ -31,6 +31,8 @@ function comprimentacao() {
 
 //====================================================================================================
 // ROTEIROS!!!!!
+
+//- - - COMEÇO - - -
 function historiaInicial() {
     console.clear()
     console.log(`Em uma noite tranquila ${jogador} estava em seu barco descansando sem enhuma preocipação.`)
@@ -59,48 +61,83 @@ function historiaInicial() {
 
 }
 
+//- - - BEIRA DA PRAIA - - -
+
 function roteitoEscolha1() {
     console.clear()
     console.log(`Ao chegar na ilha, ${jogador} olha ao seu redor e não vê nada além de areia e uma imensa floresta em sua frente.`)
     console.log("Você decide então juntar recursos para a sua sobrevivência.")
     console.log()
-    console.log("")
-    console.log(`O que ${jogador} deveria fazer agora?`)
+    prompt(`Precione [ENTER] para continuar`.bgWhite)
+}
+
+//- - - A FLORESTA NEVOADA - - -
+
+function roteiroescolha2() {
+    console.clear()
+    console.log(`Após descobrir que a barreira invisível o impede de fugir da ilha, ${jogador} começa a explorar a praia em busca de respostas. Enquanto caminha próximo da floresta, ele vê uma sombra correndo rapidamente entre as árvores.`)
+    console.log("Sem pensar muito, decide seguir a figura misteriosa.")
     console.log()
-    console.log("1. Usar alguns dos recursos para construir uma jangada e tentar sair da ilha")
-    console.log("2. Usar os recursos para construir uma cabana para passar a noite")
-    console.log("3. Explorar mais")
+    console.log("Quanto mais avança, mais a floresta fica escura e coberta por uma névoa densa. Sons estranhos ecoam entre as árvores, e em certos momentos parece que algo o observa na escuridão.")
     console.log()
+    console.log(`Logo ${jogador} percebe que está perdido.`)
+    console.log()
+    console.log("A única pista para sair dali é um rio que corta a floresta.")
+    console.log("Se errar o caminho muitas vezes, a névoa o consumirá para sempre.".red)
+    console.log()
+    console.log(`Após escapar da floresta, ${jogador} encontra uma tocha antiga, pegadas gigantes queimadas no chão e um mapa apontando para uma montanha distante. Ao longe, um rugido monstruoso ecoa pela ilha.`)
+    console.log()
+    prompt(`Precione [ENTER] para continuar`.bgWhite)
+}
+
+//- - - A CAVERNA SOMBRIA - - - 
+
+function roteiroEscolha3() {
+    console.log(`Depois de atravessar a Floresta da Névoa, ${jogador} finalmente encontra uma abertura entre as rochas. A entrada da caverna é enorme, escura e fria, como se estivesse “respirando” lentamente.`)
+    console.log()
+    console.log("O vento que sai de dentro dela traz um cheiro de queimado e algo antigo, como cinzas e metal. O silêncio ao redor fica pesado demais, como se a própria ilha estivesse prendendo a respiração.")
+    console.log()
+    console.log(`Diante da entrada, ${jogador} sente que algo o observa lá dentro.`)
+    console.log()
+    prompt(`Precione [ENTER] para continuar`.bgWhite)
+}
+
+//- - - LAR DO DRAGÃO - - -
+function roteiroescolha4() {
+
+}
+//- - - BATALHA - - - 
+function roteiroescolha5() {
+
+}
+//- - - FINALBOM - - -
+function roteiroFinalBom() {
+
+}
+//- - - FINALRUIM - - -
+function roteiroFinalRuim() {
 
 }
 
-function roteiroEscolha2(){
-    console.log(`${jogador} acorda no meio da madrugada. Está tudo em silêncio, exceto pelo som distante das árvores se movendo.`)
-    console.log("De repente, ele vê uma sombra estranha correndo rapidamente entre as árvores, como se estivesse fugindo ou tentando guiá-lo.")
-    console.log(`Movido pela curiosidade, ${jogador} decide seguir a sombra pela floresta.`)
-    console.log("Depois de caminhar por um tempo, ele chega a uma entrada de caverna escura e profunda. O ar ao redor é frio, e um som desconhecido vem de dentro dela.")
-    console.log()
-    console.log("Agora o jogador tera que fazer uma escolha muito importante")
-    console.log("1. Entrar na caverna")
-    console.log("2. Dar meia volta")
-}
+
+
 //====================================================================================================
 // FUNÇÕES
 
 
-
-function construiuCabana(){
+// CABANA
+function construiuCabana() {
     console.log("Voce entrou na cabana e se deitou")
     console.log("aos poucos pegando no sono ate cair no sono")
 }
 
-
+// BAU
 function abrirBau() {
     console.log("Depois de abrir o bau voce voltou e se deitou perto de uma arvore, caindo no sono")
 }
 
 
-
+// MENU DO JOGO
 iniciarJogo()
 function iniciarJogo() {
     let executando = true
@@ -131,7 +168,7 @@ function iniciarJogo() {
                 console.clear()
                 console.log("OK! Até a próxima")
                 prompt("Precione qualquer tecla para continuar. . .")
-                break
+                break // return acaba com o jogo
 
             default:
                 console.clear()
@@ -142,11 +179,18 @@ function iniciarJogo() {
     }
 }
 
+// ESCOLHAS =BEIRA DA PRAIA=
 function primeiraEscolha() {
     let executando1 = true
 
     while (executando1) {
-       roteitoEscolha1
+        roteitoEscolha1
+        console.clear()
+        console.log(`O que ${jogador} deveria fazer agora?`)
+        console.log()
+        console.log("1. Usar alguns dos recursos para construir uma jangada e tentar sair da ilha")
+        console.log("2. Usar os recursos para construir uma cabana para passar a noite")
+        console.log("3. Explorar mais")
         let opcao1 = Number(prompt("Escolha uma opção: "))
 
 
@@ -175,7 +219,7 @@ function primeiraEscolha() {
                 console.log(`O coração de ${jogador} dispara.`)
                 console.log("Sem entender o que acabou de acontecer, ele retorna lentamente para a ilha.")
                 prompt("Pressione [ENTER] para voltar.".bgWhite)
-                break
+                continue
             case 2:
                 console.clear()
                 console.log(`Percebendo que a noite estava se aproximando, ${jogador} decide usar os recursos coletados para construir uma pequena cabana.`)
@@ -200,48 +244,237 @@ function primeiraEscolha() {
                 console.log("mas também importante.")
                 console.log("E então voce abre esse bau e encontra uma espada de ouro")
                 espada = 1
+                console.log("")
                 prompt("Pressione [ENTER] para continuar.".bgWhite)
 
         }
     }
 }
 
+// ESCOLHAS =FLORESTA NEVOADA=
 function segundaEscolha(){
-      let executando = true
+    let desafioCompleto = false
+let tentativas = 0
 
-    while (executando2) {
-        
-        let opcao = Number(prompt("Escolha uma opção: "))
+console.clear()
+
+console.log("=== FLORESTA DA NÉVOA ===")
+console.log("Uma névoa densa cobre toda a floresta.")
+console.log("Você quase não consegue enxergar alguns metros à frente.")
+console.log("Enquanto anda, sons estranhos ecoam entre as árvores...\n")
+
+while (!desafioCompleto) {
+
+    console.log("\nEscolha um caminho:")
+    console.log("[1] Ir pela esquerda")
+    console.log("[2] Ir pela direita")
+    console.log("[3] Seguir o rio")
+
+    let escolha = prompt(">> ")
+
+    switch (escolha) {
+
+        case "1":
+
+            console.clear()
+
+            console.log("Você segue pela esquerda.")
+            console.log("Os sons ficam mais altos...")
+            console.log("Depois de alguns minutos, percebe que voltou ao mesmo lugar.")
+
+            tentativas++
+
+            console.log(`\nTentativas erradas: ${tentativas}/3`)
+
+            if (tentativas >= 3) {
+
+                console.log("\nA névoa consome completamente sua visão.")
+                console.log("Você se perde na floresta para sempre...")
+                console.log("\n=== GAME OVER ===")
+
+                process.exit()
+            }
+
+            prompt("\nPressione ENTER para continuar...")
+            console.clear()
+
+            break
 
 
+        case "2":
 
-        switch (opcao2) {
-            case 1:
+            console.clear()
+
+            console.log("Você segue pela direita.")
+            console.log("A névoa fica ainda mais densa.")
+            console.log("Algo se move entre as árvores.")
+            console.log("Você corre assustado e tropeça em raízes.")
+
+            tentativas++
+
+            console.log(`\nTentativas erradas: ${tentativas}/3`)
+
+            if (tentativas >= 3) {
+
+                console.log("\nA névoa consome completamente sua visão.")
+                console.log("Você se perde na floresta para sempre...")
+                console.log("\n=== GAME OVER ===")
+
+                process.exit()
+            }
+
+            prompt("\nPressione ENTER para continuar...")
+            console.clear()
+
+            break
+
+
+        case "3":
+
+            console.clear()
+
+            console.log("Você decide seguir o som da água.")
+            console.log("O rio guia você para fora da parte mais densa da floresta.")
+            console.log("Após alguns minutos de caminhada...")
+            console.log("Você encontra uma tocha antiga e um mapa incompleto da ilha.")
+
+            console.log("\nVocê conseguiu atravessar a Floresta da Névoa!")
+
+            desafioCompleto = true
+
+            prompt("\nPressione ENTER para continuar...")
+            console.clear()
+
+            break
+
+
+        default:
+
+            console.clear()
+
+            console.log("Escolha inválida.")
+
+            prompt("\nPressione ENTER para continuar...")
+            console.clear()
+
+            break
+    }
+}
+
+console.log("Você segue em direção às ruínas antigas da ilha...")
+
+}
+
+// ESCOLHAS =A CAVERNA SOMBRIA=
+function terceiraEscolha() {
+    let desafioCompleto = false
+    let tentativas = 0
+
+    console.clear()
+
+    console.log("=== A CAVERNA SOMBRIA ===")
+    console.log("Você está diante da entrada de uma caverna enorme e escura.")
+    console.log("Um vento frio sai de dentro dela, como um suspiro profundo.")
+    console.log("A escuridão parece te observar...\n")
+
+    while (!desafioCompleto) {
+
+        console.log("\nO que você faz?")
+        console.log("[1] Dar meia volta")
+        console.log("[2] Procurar outro caminho ao redor")
+        console.log("[3] Entrar na CAVERNA SOMBRIA")
+
+        let escolha = prompt(">> ")
+
+        switch (escolha) {
+
+            case "1":
+
                 console.clear()
-                console.log("Voce entrou na caverna e....")
-                // sai do switch e continua o código normal
-                executando = false
+
+                console.log("Você tenta voltar pelo caminho que veio...")
+                console.log("Mas a trilha já não parece a mesma.")
+                console.log("A floresta ao redor parece ter mudado.")
+
+                tentativas++
+
+                console.log(`\nTentativas: ${tentativas}/3`)
+
+                if (tentativas >= 3) {
+                    console.log("\nA ilha não permite sua fuga.")
+                    console.log("A névoa te engole completamente...")
+                    console.log("\n=== GAME OVER ===")
+                    process.exit()
+                }
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
                 break
 
-            case 2:
+
+            case "2":
+
                 console.clear()
-                console.log("VOce deu meia volta")
-                console.log()
-                console.log("Você perdeu a sua chance de escapar")
-                console.log("e Ao dar meia volta você volta para a bera da praia e vive sobrevivendo")
-                console.log("Ate o fim da sua vida")
-                prompt("Pressione [ENTER] para voltar para a ultima situação.".bgRed)
-                // volta pro menu (loop continua)
+
+                console.log("Você tenta contornar a entrada da caverna...")
+                console.log("Mas encontra apenas pedras e um caminho bloqueado.")
+                console.log("O ar fica cada vez mais pesado.")
+
+                tentativas++
+
+                console.log(`\nTentativas: ${tentativas}/3`)
+
+                if (tentativas >= 3) {
+                    console.log("\nA ilha não permite sua fuga.")
+                    console.log("A névoa te engole completamente...")
+                    console.log("\n=== GAME OVER ===")
+                    process.exit()
+                }
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
                 break
+
+
+            case "3":
+
+                console.clear()
+
+                console.log("Você respira fundo...")
+                console.log("E decide entrar na CAVERNA SOMBRIA.")
+                console.log("A escuridão te engole por completo.")
+                console.log("Lá dentro, algo se move no silêncio...")
+
+                console.log("\nVocê avançou para o próximo desafio!")
+
+                desafioCompleto = true
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
+                break
+
 
             default:
+
                 console.clear()
-                console.log("Opção incorreta".bgRed)
-                prompt(`Precione [ENTER] para voltar`.bgWhite)
+
+                console.log("Escolha inválida.")
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
                 break
         }
     }
+
+    console.log("Você adentra cada vez mais fundo na CAVERNA SOMBRIA...")
 }
+
+// ESCOLHAS =LAR DO DRAGÃO=
+function quartaEscolha
 
 //====================================================================================================
 //Executar funções
@@ -250,6 +483,11 @@ comprimentacao()
 historiaInicial()
 
 roteitoEscolha1()
-
 primeiraEscolha()
+
+roteiroescolha2()
+segundaEscolha()
+
+roteitoEscolha3()
+terceiraEscolha()
 

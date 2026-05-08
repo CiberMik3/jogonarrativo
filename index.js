@@ -35,7 +35,7 @@ function comprimentacao() {
 //- - - COMEÇO - - -
 function historiaInicial() {
     console.clear()
-    console.log(`Em uma noite tranquila ${jogador} estava em seu barco descansando sem enhuma preocipação.`)
+    console.log(`Em uma noite tranquila ${jogador} estava em seu barco descansando sem nenhuma preocupação.`)
     console.log("O mar estava inquieto naquela noite.")
     console.log("O aventureiro já havia enfrentado tempestades antes, mas aquela era diferente. O vento uivava como se estivesse vivo, e as ondas se erguiam como muralhas prontas para engolir o barco inteiro.")
     console.log("Relâmpagos rasgavam o céu, iluminando por breves segundos uma imensidão desconhecida. Foi nesse momento que ele percebeu… aquela não era uma tempestade comum.")
@@ -474,7 +474,130 @@ function terceiraEscolha() {
 }
 
 // ESCOLHAS =LAR DO DRAGÃO=
-function quartaEscolha
+function quartaEscolha(){
+
+    let desafioCompleto = false
+    let tentativas = 0
+
+    console.clear()
+
+    console.log("=== O LAR DO DRAGÃO ===")
+    console.log("Você entra no coração da caverna...")
+    console.log("O ar fica quente e pesado.")
+    console.log("Um rugido triplo ecoa pela escuridão...\n")
+
+    while (!desafioCompleto) {
+
+        console.log("\nO dragão celestial de 3 cabeças surge diante de você!")
+        console.log("O que você faz?")
+        console.log("[1] Fugir")
+        console.log("[2] Lutar")
+        console.log("[3] Se esconder")
+
+        let escolha = prompt(">> ")
+
+        switch (escolha) {
+
+            case "1":
+
+                console.clear()
+
+                console.log("Você tenta fugir...")
+                console.log("Mas o dragão bloqueia a saída com suas asas gigantes.")
+                console.log("Não há escapatória.")
+
+                tentativas++
+
+                console.log(`\nTentativas: ${tentativas}/3`)
+
+                if (tentativas >= 3) {
+                    console.log("\nO dragão não demonstra piedade...")
+                    console.log("Você é consumido pelas chamas celestiais.")
+                    console.log("\n=== GAME OVER ===")
+                    process.exit()
+                }
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
+                break
+
+
+            case "2":
+
+                console.clear()
+
+                if (espada === 0) {
+
+                    console.log("Você tenta lutar com as mãos vazias...")
+                    console.log("O dragão reage instantaneamente.")
+                    console.log("Um rugido destrói tudo ao seu redor.")
+
+                    console.log("\nVocê não tinha chance nenhuma...")
+                    console.log("\n=== GAME OVER ===")
+
+                    process.exit()
+
+                } else {
+
+                    console.log("Você puxa sua espada!")
+                    console.log("O brilho da lâmina reflete a luz da caverna.")
+                    console.log("Você desvia de um ataque e acerta o dragão!")
+
+                    console.log("\nO dragão fica ATORDOADO!")
+                    console.log("Agora ele está vulnerável...")
+
+                    desafioCompleto = true
+                }
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
+                break
+
+
+            case "3":
+
+                console.clear()
+
+                if (espada === 0) {
+
+                    console.log("Você procura ao redor da caverna...")
+                    console.log("Entre os escombros, você encontra um ARCO MÁGICO!")
+                    console.log("Ele brilha com energia celestial.")
+
+                    console.log("\nVocê agora tem uma nova arma!")
+                    espada = 1 // (tratando como 1 para simplificar o sistema)
+
+                } else {
+
+                    console.log("Você procura ao redor...")
+                    console.log("Mas não encontra nada útil.")
+                    console.log("A caverna parece vazia, como se já tivesse sido saqueada.")
+                }
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
+                break
+
+
+            default:
+
+                console.clear()
+
+                console.log("Escolha inválida.")
+
+                prompt("\nPressione ENTER para continuar...")
+                console.clear()
+
+                break
+        }
+    }
+
+    console.log("O dragão cambaleia...")
+    console.log("A batalha ainda não terminou...")
+}
 
 //====================================================================================================
 //Executar funções
@@ -490,4 +613,8 @@ segundaEscolha()
 
 roteitoEscolha3()
 terceiraEscolha()
+
+roteiroescolha4()
+quartaEscolha()
+
 

@@ -11,15 +11,15 @@ let espada = 0
 
 function mostrarMenu() {
     console.clear()
-    console.log("─╔══╗───╔══╗╔╗──╔╗╔╗╔══╗───╔══╗─╔══╗───╔══╗─╔═══╗╔══╗╔═══╗╔══╗╔══╗─")
-    console.log("─║╔╗║───╚╗╔╝║║──║║║║║╔╗║───║╔╗╚╗║╔╗║───║╔╗╚╗║╔═╗║║╔╗║║╔══╝║╔╗║║╔╗║─")
-    console.log("─║╚╝║────║║─║║──║╚╝║║╚╝║───║║╚╗║║║║║───║║╚╗║║╚═╝║║╚╝║║║╔═╗║╚╝║║║║║─")
-    console.log("─║╔╗║────║║─║║──║╔╗║║╔╗║───║║─║║║║║║───║║─║║║╔╗╔╝║╔╗║║║╚╗║║╔╗║║║║║─")
-    console.log("─║║║║───╔╝╚╗║╚═╗║║║║║║║║───║╚═╝║║╚╝║───║╚═╝║║║║║─║║║║║╚═╝║║║║║║╚╝║─")
-    console.log("─╚╝╚╝───╚══╝╚══╝╚╝╚╝╚╝╚╝───╚═══╝╚══╝───╚═══╝╚╝╚╝─╚╝╚╝╚═══╝╚╝╚╝╚══╝─")
-    console.log("1. Começar o jogo")
-    console.log("2. Manual")
-    console.log("3. Sair")
+    console.log("─╔══╗───╔══╗╔╗──╔╗╔╗╔══╗───╔══╗─╔══╗───╔══╗─╔═══╗╔══╗╔═══╗╔══╗╔══╗─".cyan)
+    console.log("─║╔╗║───╚╗╔╝║║──║║║║║╔╗║───║╔╗╚╗║╔╗║───║╔╗╚╗║╔═╗║║╔╗║║╔══╝║╔╗║║╔╗║─".cyan)
+    console.log("─║╚╝║────║║─║║──║╚╝║║╚╝║───║║╚╗║║║║║───║║╚╗║║╚═╝║║╚╝║║║╔═╗║╚╝║║║║║─".cyan)
+    console.log("─║╔╗║────║║─║║──║╔╗║║╔╗║───║║─║║║║║║───║║─║║║╔╗╔╝║╔╗║║║╚╗║║╔╗║║║║║─".cyan)
+    console.log("─║║║║───╔╝╚╗║╚═╗║║║║║║║║───║╚═╝║║╚╝║───║╚═╝║║║║║─║║║║║╚═╝║║║║║║╚╝║─".cyan)
+    console.log("─╚╝╚╝───╚══╝╚══╝╚╝╚╝╚╝╚╝───╚═══╝╚══╝───╚═══╝╚╝╚╝─╚╝╚╝╚═══╝╚╝╚╝╚══╝─".cyan)
+    console.log("                        1. Começar o jogo")
+    console.log("                           2. Manual")
+    console.log("                            3. Sair")
 }
 
 function comprimentacao() {
@@ -48,9 +48,8 @@ function historiaInicial() {
     console.log("...")
     console.log("Silêncio")
     console.log("O som das ondas agora era distante.")
-    console.log("Quando abriu os olhos, o aventureiro estava deitado na areia. Seu corpo doía, sua cabeça girava… e seu navio havia desaparecido.")
+    console.log("Quando abriu os olhos, o aventureiro estava deitado na areia. Seu corpo doía, sua cabeça girava… e seu barco havia desaparecido.")
     console.log("")
-    console.log("Ao se levantar, percebeu algo estranho.")
     console.log("Ao se levantar, percebeu algo estranho.")
     console.log("E, no fundo de sua mente, uma sensação inquietante surgia:")
     console.log("Ele não estava ali por acaso.")
@@ -185,8 +184,7 @@ function iniciarJogo() {
             case 3:
                 console.clear()
                 console.log("OK! Até a próxima")
-                prompt("Precione qualquer tecla para continuar. . .")
-                break // return acaba com o jogo
+                process.exit()
 
             default:
                 console.clear()
@@ -200,22 +198,32 @@ function iniciarJogo() {
 // ESCOLHAS =BEIRA DA PRAIA=
 function primeiraEscolha() {
     let executando1 = true
-
+    let tentativas = 0
+    let barreiraaa = 0
     while (executando1) {
 
         console.clear()
-        roteitoEscolha1()
         console.log(`O que ${jogador} deveria fazer agora?`)
         console.log()
-        console.log("1. Usar alguns dos recursos para construir uma jangada e tentar sair da ilha")
-        console.log("2. Usar os recursos para construir uma cabana para passar a noite")
-        console.log("3. Explorar mais")
+        console.log("[1] Usar alguns dos recursos para construir uma jangada e tentar sair da ilha")
+        console.log("[2] Usar os recursos para construir uma cabana para passar a noite")
+        console.log("[3] Explorar mais")
         let opcao1 = Number(prompt("Escolha uma opção: "))
 
 
 
         switch (opcao1) {
             case 1:
+                if (barreiraaa >= 1) {
+
+
+                    console.clear()
+                    console.log("\nVocê tenta mais uma vez, mais sua jangada bate na barreira e quebra")
+                    console.log("Ela afunda e você morre afogado...")
+                    console.log("\n=== GAME OVER ===")
+
+                    process.exit()
+            }
                 console.clear()
                 console.log(`Depois de horas trabalhando com madeira, cipós e pedaços espalhados pela praia, ${jogador} finalmente consegue construir uma pequena jangada.`)
                 console.log("Ela estava longe de ser perfeita.")
@@ -227,10 +235,7 @@ function primeiraEscolha() {
                 console.log("BANGGGG.")
                 console.log("Algo invisível bloqueia o caminho.")
                 console.log("A jangada é arremessada para trás enquanto pequenas ondas se espalham pelo impacto.")
-                console.log(`Confuso, ${jogador} estende lentamente a mão e toca o vazio à sua frente.`)
                 console.log("Uma barreira.")
-                console.log("Transparente")
-                console.log("Fria")
                 console.log("Impossível de atravessar.")
                 console.log("No momento do contato, uma voz profunda e distorcida ecoa ao redor:")
                 console.log("Derrote-o... para conquistar sua liberdade...".bgBlue)
@@ -238,6 +243,7 @@ function primeiraEscolha() {
                 console.log(`O coração de ${jogador} dispara.`)
                 console.log("Sem entender o que acabou de acontecer, ele retorna lentamente para a ilha.")
                 prompt("Pressione [ENTER] para voltar.".bgWhite)
+                barreiraaa++
                 continue
             case 2:
                 console.clear()
@@ -249,9 +255,22 @@ function primeiraEscolha() {
                 console.log("Na manhã seguinte, os primeiros raios de sol atravessam as pequenas frestas da cabana.")
                 console.log(`Depois de descansar pela primeira vez desde que chegou à ilha, ${jogador} acorda sentindo-se um pouco mais preparado para enfrentar o que vier pela frente.`)
                 prompt("Pressione [ENTER] para continuar.".bgWhite)
+
+
                 executando1 = false
                 break
             case 3:
+
+            if (tentativas >= 1) {
+
+
+                    console.clear()
+                    console.log("\nVocê tenta explorar novamente mais acaba caindo em uma armadilha")
+                    console.log("um buraco fundo do qual você nao consegue mais sair...")
+                    console.log("\n=== GAME OVER ===")
+
+                    process.exit()
+            }
                 console.clear()
                 console.log(`Decidido a entender melhor a ilha, ${jogador} começa a explorar a enorme floresta diante da praia.`)
                 console.log("À medida que avança entre as árvores, o som das ondas vai desaparecendo lentamente, substituído apenas pelo vento e pelo barulho das folhas sob seus pés.")
@@ -261,14 +280,18 @@ function primeiraEscolha() {
                 console.log(`${jogador} se aproxima devagar, observando os detalhes gravados na superfície metálica do baú.`)
                 console.log("Ele parecia antigo...")
                 console.log("mas também importante.")
-                console.log("E então voce abre esse bau e encontra uma espada de ouro")
+                console.log("E então voce abre esse bau e encontra A ESPADA DE OURO SAGRADA".bgYellow)
                 espada = 1
                 console.log("")
                 prompt("Pressione [ENTER] para continuar.".bgWhite)
 
+                tentativas++
+
+                }
+
         }
     }
-}
+
 
 // ESCOLHAS =FLORESTA NEVOADA=
 function segundaEscolha() {
@@ -284,7 +307,8 @@ function segundaEscolha() {
 
     while (!desafioCompleto) {
 
-        console.log("\nEscolha um caminho:")
+        console.log(`O que ${jogador} deveria fazer agora?`)
+        console.log()
         console.log("[1] Ir pela esquerda")
         console.log("[2] Ir pela direita")
         console.log("[3] Seguir o rio")
@@ -391,14 +415,15 @@ function terceiraEscolha() {
 
     console.clear()
 
-    console.log("=== A CAVERNA SOMBRIA ===")
+    console.log("=== A CAVERNA SOMBRIA ===".bgBlack)
     console.log("Você está diante da entrada de uma caverna enorme e escura.")
     console.log("Um vento frio sai de dentro dela, como um suspiro profundo.")
     console.log("A escuridão parece te observar...\n")
 
     while (!desafioCompleto) {
 
-        console.log("\nO que você faz?")
+        console.log(`O que ${jogador} deveria fazer agora?`)
+        console.log()
         console.log("[1] Dar meia volta")
         console.log("[2] Procurar outro caminho ao redor")
         console.log("[3] Entrar na CAVERNA SOMBRIA")
@@ -497,10 +522,11 @@ function quartaEscolha() {
 
     let desafioCompleto = false
     let tentativas = 0
+    let preocurar = 0
 
     console.clear()
 
-    console.log("=== O LAR DO DRAGÃO ===")
+    console.log("=== O LAR DO DRAGÃO ===".bgRed)
     console.log("Você entra no coração da caverna...")
     console.log("O ar fica quente e pesado.")
     console.log("Um rugido triplo ecoa pela escuridão...\n")
@@ -511,7 +537,7 @@ function quartaEscolha() {
         console.log("O que você faz?")
         console.log("[1] Fugir")
         console.log("[2] Lutar")
-        console.log("[3] Se esconder")
+        console.log("[3] Procurar por algo")
 
         let escolha = prompt(">> ")
 
@@ -527,9 +553,9 @@ function quartaEscolha() {
 
                 tentativas++
 
-                console.log(`\nTentativas: ${tentativas}/3`)
+                console.log(`\nTentativas: ${tentativas}/2`)
 
-                if (tentativas >= 3) {
+                if (tentativas >= 2) {
                     console.log("\nO dragão não demonstra piedade...")
                     console.log("Você é consumido pelas chamas celestiais.")
                     console.log("\n=== GAME OVER ===")
@@ -570,6 +596,14 @@ function quartaEscolha() {
                 }
 
                 prompt("\nPressione ENTER para continuar...")
+
+                if (preocurar >= 3) {
+                    console.log("\nVocê tenta procurar novamente mais o dragão percebe.")
+                    console.log("Ele se infurece e lança uma rajada de fogo que te queima até a morte...")
+                    console.log("\n=== GAME OVER ===")
+                    process.exit()
+                }
+
                 console.clear()
 
                 break
@@ -626,7 +660,7 @@ function quintaescolha() {
 
     console.clear()
 
-    console.log("=== O DRAGÃO CELESTIAL DE 3 CABEÇAS ===")
+    console.log("=== O DRAGÃO CELESTIAL DE 3 CABEÇAS ===".red)
     console.log("A criatura desperta completamente.")
     console.log("O chão treme. O ar queima. Não há saída fácil...\n")
 
@@ -677,7 +711,7 @@ function quintaescolha() {
 
                 desafioCompleto = true
 
-                prompt("\nPressione ENTER para continuar...")
+               
                 console.clear()
 
                 break
@@ -796,7 +830,6 @@ comprimentacao()
 
 historiaInicial()
 
-roteitoEscolha1()
 primeiraEscolha()
 
 roteiroescolha2()
